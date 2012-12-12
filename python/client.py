@@ -25,8 +25,6 @@ DATA_KEY_SECRET_TOKEN = '<enter-secret-token>'
 # with KA auth, both http and https are possible
 QUERY_ENDPOINT= 'https://query-api.kooaba.com/v4/query'
 
-
-## your data key or query key
 QUERY_KEY_SECRET_TOKEN = '<enter-secret-token>' 
 QUERY_KEY_ID='<enter-key-id>' ## only needed for KA authentication
 
