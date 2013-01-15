@@ -1,1 +1,1 @@
-It is very easy to access the kooaba APIs using Ruby. We have prepared a little gem at [https://github.com/kooaba/kooaba-ruby](https://github.com/kooaba/kooaba-ruby). You can read there how to use the gem.
+It is very easy to access the kooaba APIs using Ruby. We have prepared a little gem at [https://github.com/kooaba/kooaba-api-v4-rubygem](https://github.com/kooaba/kooaba-api-v4-rubygem). You can read there how to use the gem.
