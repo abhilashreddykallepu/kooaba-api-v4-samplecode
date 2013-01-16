@@ -32,7 +32,8 @@ Run the script with:
 
 You should see something like this:
 
-    Result: {"uuid":"05b5e75e-a7cf-496b-9bf8-83bfa3fb39ef","enabled":true,"images":[{"sha1":"057c10bba45e37a0c079cf2eb6ed1389e4e00615"}]}
+    Result: {"uuid":"05b5e75e-a7cf-496b-9bf8-83bfa3fb39ef","enabled":true,
+    "images":[{"sha1":"057c10bba45e37a0c079cf2eb6ed1389e4e00615"}]}
 
 The result is in JSON format.
 
@@ -53,7 +54,27 @@ Run the script with:
 
 The result will be a JSON string:
 
-    Result: {"query_id":"ca465e7c38c8481ea798a9471912c48a","results":[{"item_uuid":"05b5e75e-a7cf-496b-9bf8-83bfa3fb39ef","bucket_uuid":"108695a2-7825-4a98-8bda-b980782c5e33","service_id":"object_retrieval","score":0.777778,"recognitions":[{"score":0.777778,"id":"image.sha1:057c10bba45e37a0c079cf2eb6ed1389e4e00615","reference_projection":[{"x":1128.413452,"y":-164.773743},{"x":-100.0,"y":-39.0},{"x":-94.0,"y":242.0},{"x":281.0,"y":243.0}],"bounding_box":[{"x":15.0,"y":17.0},{"x":15.0,"y":172.0},{"x":232.0,"y":172.0},{"x":232.0,"y":17.0}]}],"metadata":null,"title":"An image","reference_id":"r376466"},{"item_uuid":"b8bdfe2d-5310-4e67-8294-b6c4bc224d5e","bucket_uuid":"108695a2-7825-4a98-8bda-b980782c5e33","service_id":"object_retrieval","score":0.777778,"recognitions":[{"score":0.777778,"id":"image.sha1:057c10bba45e37a0c079cf2eb6ed1389e4e00615","reference_projection":[{"x":1128.413452,"y":-164.773743},{"x":-100.0,"y":-39.0},{"x":-94.0,"y":242.0},{"x":281.0,"y":243.0}],"bounding_box":[{"x":15.0,"y":17.0},{"x":15.0,"y":172.0},{"x":232.0,"y":172.0},{"x":232.0,"y":17.0}]}],"metadata":null,"title":"An image"}]}
+    Result: {"query_id":"ca465e7c38c8481ea798a9471912c48a",
+    "results":[
+
+    {"item_uuid":"05b5e75e-a7cf-496b-9bf8-83bfa3fb39ef","bucket_uuid":"108695a2-7825-4a98-8bda-b980782c5e33",
+    "service_id":"object_retrieval","score":0.777778,
+    "recognitions":[{"score":0.777778,"id":"image.sha1:057c10bba45e37a0c079cf2eb6ed1389e4e00615",
+    "reference_projection":[{"x":1128.413452,"y":-164.773743},{"x":-100.0,"y":-39.0},{"x":-94.0,"y":242.0},{"x":281.0,"y":243.0}],
+    "bounding_box":[{"x":15.0,"y":17.0},{"x":15.0,"y":172.0},{"x":232.0,"y":172.0},{"x":232.0,"y":17.0}]}],
+    "metadata":null,
+    "title":"An image",
+    "reference_id":"r376466"},
+
+    {"item_uuid":"b8bdfe2d-5310-4e67-8294-b6c4bc224d5e","bucket_uuid":"108695a2-7825-4a98-8bda-b980782c5e33",
+    "service_id":"object_retrieval","score":0.777778,
+    "recognitions":[{"score":0.777778,"id":"image.sha1:057c10bba45e37a0c079cf2eb6ed1389e4e00615",
+    "reference_projection":[{"x":1128.413452,"y":-164.773743},{"x":-100.0,"y":-39.0},{"x":-94.0,"y":242.0},{"x":281.0,"y":243.0}],
+    "bounding_box":[{"x":15.0,"y":17.0},{"x":15.0,"y":172.0},{"x":232.0,"y":172.0},{"x":232.0,"y":17.0}]}],
+    "metadata":null,
+    "title":"An image"}
+
+    ]}
 
 ## Troubleshooting
 
