@@ -1,4 +1,4 @@
-# iOS Sample Code for kooaba Query API V4
+# iOS Sample Code for kooaba's Query API V4
 
 ## Prerequisites
 
