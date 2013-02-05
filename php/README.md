@@ -14,7 +14,7 @@ The _upload.php_ script allows you to upload items` to your account. An item has
 
 Modify the config variables in the script:
 
-   `$data_key` - you need a Data API Key and a Bucket UUID of the bucket you want to add items into. You can find your Data API Keys on the [kooaba platform, API Access, Data API Keys](https://platform.kooaba.com/datakeys/). You need to use the `secret-token` string. You can find the Bucket UUID in the [Reference Items section](https://platform.kooaba.com/items/).
+   `$data_key` - you need a Data API Key and a Bucket UUID of the bucket you want to add items into. You can find your Data API Keys on the [kooaba platform, API Access, Data API Keys](https://platform.kooaba.com/datakeys). You need to use the `secret-token` string. You can find the Bucket UUID in the [Reference Items](https://platform.kooaba.com/items) section.
 
    `bucket_uuid` - The id of the bucket you want to put the image into.
 
