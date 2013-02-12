@@ -107,7 +107,7 @@ static const double kJPEGCompressionLevel = 0.6;
 
 // Send an image to the kooaba Query API and call the completion block when finished.
 // The userData parameter must be a valid JSON string.
-- (void)sendQueryImage:(UIImage*)image withUserData:(NSString*)userData completion:(void(^)(NSString*))completion
+- (void)sendQueryImage:(UIImage*)image withUserData:(NSString*)userData completion:(void(^)(NSData*, NSError*))completion
 {
 	// Ideally, the UIImage would be converted to JPEG data on a background thread...
 	NSData* data = UIImageJPEGRepresentation(image, 1.0);
@@ -142,33 +142,22 @@ static const double kJPEGCompressionLevel = 0.6;
 			// Send the request asynchronously
 			[NSURLConnection sendAsynchronousRequest:signedRequest queue:self.networkOperationQueue completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
 				
-				// result holds the status of this request
-				NSString* result = nil;
-				
-				// If there is no error, then the result is either a successful response or an error from the Query API
-				if (error == nil) {
-					result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-					NSLog(@"%@", result);
-				} else {
-					// We encountered a network error
-					result = [error localizedDescription];
-					NSLog(@"Network Error: %@", error);
-				}
-
 				// Turn off the network activity indicator on the main thread and call the completion block with the result.
 				dispatch_async(dispatch_get_main_queue(), ^{
 					[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-					completion(result);
+					completion(data, error);
 				});
 			}];
 		} else {
 			// We encountered an unexpected error scaling the image.
-			NSLog(@"Unexpected error: Could not scale image");
+			NSDictionary* errorInfo = [NSDictionary dictionaryWithObject:@"Could not scale image" forKey:NSLocalizedDescriptionKey];
+			NSError* scalingError = [NSError errorWithDomain:@"QueryExampleErrorDomain" code:-1 userInfo:errorInfo];
+			NSLog(@"%@", scalingError);
 			
 			// Turn off the network activity indicator on the main thread.
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-				completion(@"Unexpected error: Could not scale image");
+				completion(nil, scalingError);
 			});
 		}
 	});
@@ -207,6 +196,22 @@ static const double kJPEGCompressionLevel = 0.6;
 	}
 	
 	return imageData;
+}
+
+// Look for a URL to redirect to in the metadata attribute for an item
++ (NSURL*)redirectURLForResult:(NSDictionary*)result
+{
+	NSURL* redirectURL = nil;
+	NSDictionary* metadata = [result objectForKey:@"metadata"];
+	if ([metadata isKindOfClass:[NSDictionary class]]) {
+		NSString* urlString = [metadata objectForKey:@"redirect_url"];
+		if ([urlString isKindOfClass:[NSString class]]) {
+			// If it's not a valid URL, this method will end up returning nil.
+			redirectURL = [NSURL URLWithString:urlString];
+		}
+	}
+	
+	return redirectURL;
 }
 
 

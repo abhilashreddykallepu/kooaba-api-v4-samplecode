@@ -1,5 +1,5 @@
 //
-//  KIRAppDelegate.h
+//  KIRResponseViewController.h
 //  Copyright (c) 2013 kooaba AG.
 //
 // All rights reserved. Redistribution and use in source and binary forms,
@@ -29,17 +29,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KIRAppDelegate : UIResponder <UIApplicationDelegate>
+// Show the details of a query response
+@interface KIRResponseViewController : UITableViewController
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navigationController;
-
-// Helper method to look for a redirect URL in a result
-+ (NSURL*)redirectURLForResult:(NSDictionary*)result;
-
-// Helper method to send a query to the kooaba Query API.
-// The image and any user data (JSON) are sent in the Query.
-// The completion block is called when the request is completed with either the result data or an error.
-- (void)sendQueryImage:(UIImage*)image withUserData:(NSString*)userData completion:(void(^)(NSData*, NSError*))completion;
+// Designated initializer with a query response dictionary and the raw response data
+- (id)initWithResponse:(NSDictionary*)response rawJSONData:(NSData*)jsonData;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  KIRAppDelegate.h
+//  KIRWebViewController.h
 //  Copyright (c) 2013 kooaba AG.
 //
 // All rights reserved. Redistribution and use in source and binary forms,
@@ -29,17 +29,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KIRAppDelegate : UIResponder <UIApplicationDelegate>
+@interface KIRWebViewController : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navigationController;
-
-// Helper method to look for a redirect URL in a result
-+ (NSURL*)redirectURLForResult:(NSDictionary*)result;
-
-// Helper method to send a query to the kooaba Query API.
-// The image and any user data (JSON) are sent in the Query.
-// The completion block is called when the request is completed with either the result data or an error.
-- (void)sendQueryImage:(UIImage*)image withUserData:(NSString*)userData completion:(void(^)(NSData*, NSError*))completion;
+// Designated initializer to show the contents of a URL
+- (id)initWithURL:(NSURL*)url;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  KIRAppDelegate.h
+//  KIRJSONViewController.m
 //  Copyright (c) 2013 kooaba AG.
 //
 // All rights reserved. Redistribution and use in source and binary forms,
@@ -27,19 +27,39 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
+#import "KIRJSONViewController.h"
 
-@interface KIRAppDelegate : UIResponder <UIApplicationDelegate>
+@interface KIRJSONViewController ()
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (nonatomic, strong, readwrite) IBOutlet UITextView* textView;
+@property (nonatomic, strong, readwrite) NSString* text;
 
-// Helper method to look for a redirect URL in a result
-+ (NSURL*)redirectURLForResult:(NSDictionary*)result;
+@end
 
-// Helper method to send a query to the kooaba Query API.
-// The image and any user data (JSON) are sent in the Query.
-// The completion block is called when the request is completed with either the result data or an error.
-- (void)sendQueryImage:(UIImage*)image withUserData:(NSString*)userData completion:(void(^)(NSData*, NSError*))completion;
+@implementation KIRJSONViewController
+
+- (id)initWithJSONData:(NSData*)data
+{
+	self = [super initWithNibName:@"KIRJSONViewController" bundle:nil];
+	if (self) {
+		self.text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	}
+	
+	return self;
+}
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	// Do any additional setup after loading the view from its nib.
+	
+	self.textView.text = self.text;
+}
+
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
+}
 
 @end

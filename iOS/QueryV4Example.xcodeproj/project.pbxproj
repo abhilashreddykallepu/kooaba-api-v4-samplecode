@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5505003416C406E10060D200 /* KIRResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505003216C406E10060D200 /* KIRResponseViewController.m */; };
+		5505003516C406E10060D200 /* KIRResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5505003316C406E10060D200 /* KIRResponseViewController.xib */; };
 		55A82B95167A431F005120F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A82B94167A431F005120F2 /* UIKit.framework */; };
 		55A82B97167A431F005120F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A82B96167A431F005120F2 /* Foundation.framework */; };
 		55A82B99167A431F005120F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A82B98167A431F005120F2 /* CoreGraphics.framework */; };
@@ -21,12 +23,21 @@
 		55A82BC9167A4452005120F2 /* KIRQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A82BC7167A4451005120F2 /* KIRQueryRequest.m */; };
 		55A82BCB167A4649005120F2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A82BCA167A4649005120F2 /* MobileCoreServices.framework */; };
 		55A82BCD167A4652005120F2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A82BCC167A4652005120F2 /* ImageIO.framework */; };
+		55BD188F16C8D80900EBE0B9 /* KIRJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BD188D16C8D80900EBE0B9 /* KIRJSONViewController.m */; };
+		55BD189016C8D80900EBE0B9 /* KIRJSONViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BD188E16C8D80900EBE0B9 /* KIRJSONViewController.xib */; };
+		55BD189416C8E27B00EBE0B9 /* KIRResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BD189216C8E27B00EBE0B9 /* KIRResultViewController.m */; };
+		55BD189516C8E27B00EBE0B9 /* KIRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BD189316C8E27B00EBE0B9 /* KIRResultViewController.xib */; };
+		55BD189916C8FE9500EBE0B9 /* KIRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BD189716C8FE9500EBE0B9 /* KIRWebViewController.m */; };
+		55BD189A16C8FE9500EBE0B9 /* KIRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BD189816C8FE9500EBE0B9 /* KIRWebViewController.xib */; };
 		55D6C62916BBFCCF00A91CC0 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D6C62816BBFCCF00A91CC0 /* Base64.m */; };
 		55FBF8ED16BFF9F5000B9EB5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55FBF8EC16BFF9F5000B9EB5 /* Icon@2x.png */; };
 		55FBF8EF16BFF9FB000B9EB5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55FBF8EE16BFF9FB000B9EB5 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5505003116C406E10060D200 /* KIRResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIRResponseViewController.h; sourceTree = "<group>"; };
+		5505003216C406E10060D200 /* KIRResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIRResponseViewController.m; sourceTree = "<group>"; };
+		5505003316C406E10060D200 /* KIRResponseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KIRResponseViewController.xib; sourceTree = "<group>"; };
 		55A82B90167A431E005120F2 /* QueryV4Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryV4Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A82B94167A431F005120F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55A82B96167A431F005120F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,6 +58,15 @@
 		55A82BC7167A4451005120F2 /* KIRQueryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIRQueryRequest.m; sourceTree = "<group>"; };
 		55A82BCA167A4649005120F2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		55A82BCC167A4652005120F2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		55BD188C16C8D80900EBE0B9 /* KIRJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIRJSONViewController.h; sourceTree = "<group>"; };
+		55BD188D16C8D80900EBE0B9 /* KIRJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIRJSONViewController.m; sourceTree = "<group>"; };
+		55BD188E16C8D80900EBE0B9 /* KIRJSONViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KIRJSONViewController.xib; sourceTree = "<group>"; };
+		55BD189116C8E27B00EBE0B9 /* KIRResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIRResultViewController.h; sourceTree = "<group>"; };
+		55BD189216C8E27B00EBE0B9 /* KIRResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIRResultViewController.m; sourceTree = "<group>"; };
+		55BD189316C8E27B00EBE0B9 /* KIRResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KIRResultViewController.xib; sourceTree = "<group>"; };
+		55BD189616C8FE9500EBE0B9 /* KIRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIRWebViewController.h; sourceTree = "<group>"; };
+		55BD189716C8FE9500EBE0B9 /* KIRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIRWebViewController.m; sourceTree = "<group>"; };
+		55BD189816C8FE9500EBE0B9 /* KIRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KIRWebViewController.xib; sourceTree = "<group>"; };
 		55D6C62716BBFCCF00A91CC0 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		55D6C62816BBFCCF00A91CC0 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		55FBF8EC16BFF9F5000B9EB5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
@@ -109,6 +129,18 @@
 				55A82BAC167A431F005120F2 /* KIRMasterViewController.h */,
 				55A82BAD167A431F005120F2 /* KIRMasterViewController.m */,
 				55A82BB2167A431F005120F2 /* KIRMasterViewController.xib */,
+				5505003116C406E10060D200 /* KIRResponseViewController.h */,
+				5505003216C406E10060D200 /* KIRResponseViewController.m */,
+				5505003316C406E10060D200 /* KIRResponseViewController.xib */,
+				55BD189116C8E27B00EBE0B9 /* KIRResultViewController.h */,
+				55BD189216C8E27B00EBE0B9 /* KIRResultViewController.m */,
+				55BD189316C8E27B00EBE0B9 /* KIRResultViewController.xib */,
+				55BD188C16C8D80900EBE0B9 /* KIRJSONViewController.h */,
+				55BD188D16C8D80900EBE0B9 /* KIRJSONViewController.m */,
+				55BD188E16C8D80900EBE0B9 /* KIRJSONViewController.xib */,
+				55BD189616C8FE9500EBE0B9 /* KIRWebViewController.h */,
+				55BD189716C8FE9500EBE0B9 /* KIRWebViewController.m */,
+				55BD189816C8FE9500EBE0B9 /* KIRWebViewController.xib */,
 				55A82B9B167A431F005120F2 /* Supporting Files */,
 			);
 			path = QueryV4Example;
@@ -199,6 +231,10 @@
 				55A82BB4167A431F005120F2 /* KIRMasterViewController.xib in Resources */,
 				55FBF8ED16BFF9F5000B9EB5 /* Icon@2x.png in Resources */,
 				55FBF8EF16BFF9FB000B9EB5 /* Icon.png in Resources */,
+				5505003516C406E10060D200 /* KIRResponseViewController.xib in Resources */,
+				55BD189016C8D80900EBE0B9 /* KIRJSONViewController.xib in Resources */,
+				55BD189516C8E27B00EBE0B9 /* KIRResultViewController.xib in Resources */,
+				55BD189A16C8FE9500EBE0B9 /* KIRWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +250,10 @@
 				55A82BAE167A431F005120F2 /* KIRMasterViewController.m in Sources */,
 				55A82BC9167A4452005120F2 /* KIRQueryRequest.m in Sources */,
 				55D6C62916BBFCCF00A91CC0 /* Base64.m in Sources */,
+				5505003416C406E10060D200 /* KIRResponseViewController.m in Sources */,
+				55BD188F16C8D80900EBE0B9 /* KIRJSONViewController.m in Sources */,
+				55BD189416C8E27B00EBE0B9 /* KIRResultViewController.m in Sources */,
+				55BD189916C8FE9500EBE0B9 /* KIRWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
