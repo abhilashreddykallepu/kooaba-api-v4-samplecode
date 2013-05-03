@@ -9,7 +9,8 @@ import java.util.Map;
 public class Query {
 
     public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException, IOException {
-        // If you want your image to be recognized, it must be added to your reference items: https://platform.kooaba.com/items 
+        // If you want your image to be recognized, it must be added to your reference items: https://platform.kooaba.com/items
+        // Make sure that your query image is less the 2Mb in size.
         String imageFile = "../images/query_image.jpg";
 
         // Get your query API keys at: https://platform.kooaba.com/querykeys
