@@ -31,7 +31,7 @@ public class KooabaApi {
     private static final String QUERY_HOST = "query-api.kooaba.com";
     private static final String QUERY_PATH = "/v4/query";
 
-    private static final String MULTIPART_BOUNDARY = "----------ThIs_Is_tHe_bouNdaRY_$";
+    private static final String MULTIPART_BOUNDARY = "----------ThIs_Is_tHe_bouNdaRY_";
     private static final String CRLF = "\r\n";
 
     private String keyId;
