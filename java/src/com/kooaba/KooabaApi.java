@@ -40,11 +40,11 @@ public class KooabaApi {
 
     private int responseStatus = -1;
     /**Get the http status code of the last API request.*/
-    public int getResponseStatus() {return responseStatus;}
+    public int getResponseStatus() {return this.responseStatus;}
 
     private String responseBody = null;
     /**Get the http response of the last API request.*/
-    public String getResponseBody() {return responseBody;}
+    public String getResponseBody() {return this.responseBody;}
 
     public KooabaApi(String keyId, String secretToken) {
         this.keyId = keyId;
@@ -75,8 +75,8 @@ public class KooabaApi {
     }
 
     public String query(String imagePath, Map<String, String> params) throws IOException, NoSuchAlgorithmException, InvalidKeyException {
-        responseStatus = -1;
-        responseBody = null;
+        this.responseStatus = -1;
+        this.responseBody = null;
 
         byte[] requestBody = createMultipartRequest(imagePath, params);
 
@@ -111,10 +111,10 @@ public class KooabaApi {
         InputStream is = null;
         try {
             is = conn.getInputStream();
-            responseStatus = ((HttpURLConnection)conn).getResponseCode();
+            this.responseStatus = ((HttpURLConnection)conn).getResponseCode();
         } catch (IOException e) {
             try {
-                responseStatus = ((HttpURLConnection)conn).getResponseCode();
+                this.responseStatus = ((HttpURLConnection)conn).getResponseCode();
                 is = ((HttpURLConnection)conn).getErrorStream();
             } catch(IOException ex) {
                 throw ex;
@@ -129,8 +129,8 @@ public class KooabaApi {
             sb.append(inputLine);
         bin.close();
 
-        responseBody = sb.toString();
-        return responseBody;
+        this.responseBody = sb.toString();
+        return this.responseBody;
     }
 
     private byte[] createMultipartRequest(String imagePath, Map<String, String> params) throws IOException {
