@@ -157,7 +157,7 @@ public class KooabaApi {
         return bodyOutputStream.toByteArray();
     }
 
-    public static String signHmacSha1(String key, String message) throws NoSuchAlgorithmException, InvalidKeyException, IllegalStateException {
+    private static String signHmacSha1(String key, String message) throws NoSuchAlgorithmException, InvalidKeyException, IllegalStateException {
         SecretKeySpec keySpec = new SecretKeySpec(key.getBytes(), "HmacSHA1");
         Mac mac = Mac.getInstance("HmacSHA1");
         mac.init(keySpec);
@@ -166,14 +166,14 @@ public class KooabaApi {
         return new String(Base64.encodeBase64(result));
     }
 
-    public static String getDateRfc1123() {
+    private static String getDateRfc1123() {
         String RFC1123_DATE_PATTERN = "EEE, dd MMM yyyy HH:mm:ss zzz";
         SimpleDateFormat dateFormat = new SimpleDateFormat(RFC1123_DATE_PATTERN);
         dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
         return dateFormat.format(new Date());
     }
 
-    public void writeFileToOutputStream(File f, final OutputStream out) throws IOException {
+    private void writeFileToOutputStream(File f, final OutputStream out) throws IOException {
         if (out == null) {
             throw new IllegalArgumentException("Output stream may not be null");
         }
