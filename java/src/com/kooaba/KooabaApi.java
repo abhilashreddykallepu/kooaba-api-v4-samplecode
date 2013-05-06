@@ -83,31 +83,23 @@ public class KooabaApi {
         final String dateStr = getDateRfc1123();
         String contentType = "multipart/form-data";
 
-        String auth = null;
-        String protocol = null;
-        if("Token".equals(authenticationMethod)) {
-            auth = "Token " + secretToken;
-            protocol = "https://";
-        } else if ("KA".equals(authenticationMethod)) {
-            auth = "KA " + keyId + ":" + sign("POST", requestBody, contentType, dateStr, QUERY_PATH);
-            protocol = "http://";
-        }
-
-        URL u = new URL(protocol + QUERY_HOST + QUERY_PATH);
-        HttpURLConnection conn = (HttpURLConnection) u.openConnection();
+        HttpURLConnection conn = (HttpURLConnection) (new URL(getQueryUrl())).openConnection();
         conn.setRequestMethod("POST");
         conn.setDoOutput(true);
         conn.setDoInput(true);
 
         conn.setRequestProperty("Content-Type", contentType + "; boundary=" + MULTIPART_BOUNDARY);
-        conn.setRequestProperty("Authorization", auth);
+        conn.setRequestProperty("Authorization", getAuthorizationHeader(this.authenticationMethod, "POST", requestBody, contentType, dateStr, QUERY_PATH));
         conn.setRequestProperty("Accept", "application/json; charset=utf-8");
         conn.setRequestProperty("Date", dateStr);
 
         // Write the body of the request
         conn.getOutputStream().write(requestBody);
 
-        // Read the response.
+        return readHttpResponse(conn);
+    }
+
+    private String readHttpResponse(HttpURLConnection conn) throws IOException {
         InputStream is = null;
         try {
             is = conn.getInputStream();
@@ -131,6 +123,23 @@ public class KooabaApi {
 
         this.responseBody = sb.toString();
         return this.responseBody;
+    }
+
+
+    private String getAuthorizationHeader(String authenticationMethod, String verb, byte[] requestBody, String contentType, String date, String queryPath) throws InvalidKeyException, NoSuchAlgorithmException, IllegalStateException, UnsupportedEncodingException {
+        String auth = null;
+        if("Token".equals(authenticationMethod)) {
+            auth = "Token " + secretToken;
+        } else if ("KA".equals(authenticationMethod)) {
+            auth = "KA " + keyId + ":" + sign("POST", requestBody, contentType, date, QUERY_PATH);
+        }
+
+        return auth;
+    }
+
+    private String getQueryUrl() {
+        String protocol = "KA".equals(this.authenticationMethod) ? "http://" : "https://";
+        return protocol + QUERY_HOST + QUERY_PATH;
     }
 
     private byte[] createMultipartRequest(String imagePath, Map<String, String> params) throws IOException {
