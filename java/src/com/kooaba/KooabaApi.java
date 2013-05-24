@@ -17,6 +17,7 @@ import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
@@ -177,7 +178,7 @@ public class KooabaApi {
 
     private static String getDateRfc1123() {
         String RFC1123_DATE_PATTERN = "EEE, dd MMM yyyy HH:mm:ss zzz";
-        SimpleDateFormat dateFormat = new SimpleDateFormat(RFC1123_DATE_PATTERN);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(RFC1123_DATE_PATTERN, Locale.US);
         dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
         return dateFormat.format(new Date());
     }
